@@ -7,6 +7,7 @@ import CodeInOut from './components/codeinout';
 import Transition from './components/transition';
 import Bubble from './components/bubble';
 import Clock from './components/clock';
+import Line from './components/line';
 
 class App extends Component {
   state = {
@@ -27,6 +28,8 @@ class App extends Component {
       component = <Bubble />
     } else if (type === 'clock') {
       component = <Clock />
+    } else if (type === 'line') {
+      component = <Line />
     }
     return (
       <div className="App">
@@ -48,6 +51,9 @@ class App extends Component {
           </Button>
           <Button type='primary' onClick={() => this.setState({ type: 'clock' })}>
             时钟
+          </Button>
+          <Button type='primary' onClick={() => this.setState({ type: 'line' })}>
+            线图
           </Button>
         </Row>
         <Row>
