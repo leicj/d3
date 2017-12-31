@@ -1,7 +1,7 @@
 [*]
 indent_style = space
 
-[*.{cs,js,json,html,htm}]
+[*.{css,js,json,html,htm}]
 indent_size = 2
 
 [*.py]
