@@ -4,6 +4,7 @@ import { Button, Row } from 'antd';
 import KeyJump from './components/keyjump';
 import Bar from './components/bar';
 import CodeInOut from './components/codeinout';
+import Transition from './components/transition';
 
 class App extends Component {
   state = {
@@ -18,6 +19,8 @@ class App extends Component {
       component = <Bar />
     } else if (type === 'codeinout') {
       component = <CodeInOut />
+    } else if (type === 'transition') {
+      component = <Transition />
     }
     return (
       <div className="App">
@@ -30,6 +33,9 @@ class App extends Component {
           </Button>
           <Button type='primary' onClick={() => this.setState({ type: 'keyjump' })}>
             字符跳动
+          </Button>
+          <Button type='primary' onClick={() => this.setState({ type: 'transition' })}>
+            延时转换
           </Button>
         </Row>
         <Row>
