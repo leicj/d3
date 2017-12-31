@@ -18,7 +18,6 @@ class Bubble extends React.Component {
     const gx = d3.select('svg').append('g').attr('transform', `translate(0, ${height - margin})`)
     const gy = d3.select('svg').append('g').attr('transform', `translate(${margin},0)`)
 
-
     const xAxis = d3.axisBottom(x);
     const yAxis = d3.axisLeft(y);
 
