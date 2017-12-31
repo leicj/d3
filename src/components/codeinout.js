@@ -100,7 +100,7 @@ class CodeInOut extends React.Component {
   }
   render() {
     return (
-      <Row>
+      <Row className="codeinout">
         <svg width="960" height="200" className='svg1'></svg>
         <svg width="960" height="200" className='svg2'></svg>
         <svg width="960" height="200" className='svg3'></svg>

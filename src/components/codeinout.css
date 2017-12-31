@@ -1,16 +1,16 @@
-text {
+.codeinout text {
   font: bold 48px monospace;
 }
 
-.enter {
+.codeinout .enter {
   fill: green;
 }
 
-.update {
+.codeinout .update {
   fill: #333;
 }
 
-.exit {
+.codeinout .exit {
   fill: brown;
 }
   

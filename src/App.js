@@ -5,6 +5,7 @@ import KeyJump from './components/keyjump';
 import Bar from './components/bar';
 import CodeInOut from './components/codeinout';
 import Transition from './components/transition';
+import Bubble from './components/bubble';
 
 class App extends Component {
   state = {
@@ -21,6 +22,8 @@ class App extends Component {
       component = <CodeInOut />
     } else if (type === 'transition') {
       component = <Transition />
+    } else if (type === 'bubble') {
+      component = <Bubble />
     }
     return (
       <div className="App">
@@ -36,6 +39,9 @@ class App extends Component {
           </Button>
           <Button type='primary' onClick={() => this.setState({ type: 'transition' })}>
             延时转换
+          </Button>
+          <Button type='primary' onClick={() => this.setState({ type: 'bubble' })}>
+            散点图
           </Button>
         </Row>
         <Row>
