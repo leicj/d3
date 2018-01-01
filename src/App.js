@@ -9,6 +9,7 @@ import Bubble from './components/bubble';
 import Clock from './components/clock';
 import Line from './components/line';
 import SunBurst from './components/sunburst';
+import Grid from './components/grid';
 
 class App extends Component {
   state = {
@@ -33,6 +34,8 @@ class App extends Component {
       component = <Line />
     } else if (type === 'sunburst') {
       component = <SunBurst />
+    } else if (type === 'grid') {
+      component = <Grid />
     }
     return (
       <div className="App">
@@ -60,6 +63,9 @@ class App extends Component {
           </Button>
           <Button type='primary' onClick={() => this.setState({ type: 'sunburst' })}>
             饼状图
+          </Button>
+          <Button type='primary' onClick={() => this.setState({ type: 'grid' })}>
+            网格
           </Button>
         </Row>
         <Row>
