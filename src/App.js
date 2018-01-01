@@ -8,6 +8,7 @@ import Transition from './components/transition';
 import Bubble from './components/bubble';
 import Clock from './components/clock';
 import Line from './components/line';
+import SunBurst from './components/sunburst';
 
 class App extends Component {
   state = {
@@ -30,6 +31,8 @@ class App extends Component {
       component = <Clock />
     } else if (type === 'line') {
       component = <Line />
+    } else if (type === 'sunburst') {
+      component = <SunBurst />
     }
     return (
       <div className="App">
@@ -54,6 +57,9 @@ class App extends Component {
           </Button>
           <Button type='primary' onClick={() => this.setState({ type: 'line' })}>
             线图
+          </Button>
+          <Button type='primary' onClick={() => this.setState({ type: 'sunburst' })}>
+            饼状图
           </Button>
         </Row>
         <Row>
