@@ -13,6 +13,7 @@ import Grid from './components/grid';
 import Brush from './components/brush';
 import Drag from './components/drag';
 import Ease from './components/ease';
+import BasicArea from './components/basicCharts/area';
 
 class App extends Component {
   state = {
@@ -45,6 +46,8 @@ class App extends Component {
       component = <Drag />
     } else if (type === 'ease') {
       component = <Ease />
+    } else if (type === 'basicarea') {
+      component = <BasicArea />
     }
     return (
       <div className="App">
@@ -84,6 +87,9 @@ class App extends Component {
           </Button>
           <Button type='primary' onClick={() => this.setState({ type: 'ease' })}>
             渐变
+          </Button>
+          <Button type='primary' onClick={() => this.setState({ type: 'basicarea' })}>
+            Basic Area
           </Button>
         </Row>
         <Row>

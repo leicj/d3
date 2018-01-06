@@ -24,3 +24,5 @@ try everything about d3
 **拖拽**: ```拖拽```
 
 **渐变**: ```渐变```
+
+**Area Chart**: ```面积图```
