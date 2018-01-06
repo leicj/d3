@@ -26,3 +26,5 @@ try everything about d3
 **渐变**: ```渐变```
 
 **Area Chart**: ```面积图```
+
+**Line Chart**: ```线图```

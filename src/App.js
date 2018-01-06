@@ -14,6 +14,7 @@ import Brush from './components/brush';
 import Drag from './components/drag';
 import Ease from './components/ease';
 import BasicArea from './components/basicCharts/area';
+import BasicLine from './components/basicCharts/line';
 
 class App extends Component {
   state = {
@@ -48,6 +49,8 @@ class App extends Component {
       component = <Ease />
     } else if (type === 'basicarea') {
       component = <BasicArea />
+    } else if (type === 'basicline') {
+      component = <BasicLine />
     }
     return (
       <div className="App">
@@ -90,6 +93,9 @@ class App extends Component {
           </Button>
           <Button type='primary' onClick={() => this.setState({ type: 'basicarea' })}>
             Basic Area
+          </Button>
+          <Button type='primary' onClick={() => this.setState({ type: 'basicline' })}>
+            Basic Line
           </Button>
         </Row>
         <Row>
