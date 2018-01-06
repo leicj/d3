@@ -10,6 +10,7 @@ import Clock from './components/clock';
 import Line from './components/line';
 import SunBurst from './components/sunburst';
 import Grid from './components/grid';
+import Brush from './components/brush';
 
 class App extends Component {
   state = {
@@ -36,6 +37,8 @@ class App extends Component {
       component = <SunBurst />
     } else if (type === 'grid') {
       component = <Grid />
+    } else if (type === 'brush') {
+      component = <Brush />
     }
     return (
       <div className="App">
@@ -66,6 +69,9 @@ class App extends Component {
           </Button>
           <Button type='primary' onClick={() => this.setState({ type: 'grid' })}>
             网格
+          </Button>
+          <Button type='primary' onClick={() => this.setState({ type: 'brush' })}>
+            刷子
           </Button>
         </Row>
         <Row>
