@@ -12,6 +12,7 @@ import SunBurst from './components/sunburst';
 import Grid from './components/grid';
 import Brush from './components/brush';
 import Drag from './components/drag';
+import Ease from './components/ease';
 
 class App extends Component {
   state = {
@@ -42,6 +43,8 @@ class App extends Component {
       component = <Brush />
     } else if (type === 'drag') {
       component = <Drag />
+    } else if (type === 'ease') {
+      component = <Ease />
     }
     return (
       <div className="App">
@@ -78,6 +81,9 @@ class App extends Component {
           </Button>
           <Button type='primary' onClick={() => this.setState({ type: 'drag' })}>
             拖拽
+          </Button>
+          <Button type='primary' onClick={() => this.setState({ type: 'ease' })}>
+            渐变
           </Button>
         </Row>
         <Row>
