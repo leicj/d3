@@ -34,3 +34,5 @@ try everything about d3
 **Multi Line**: ```Multi Line```
 
 **stack**: ```stack```
+
+**bar**: ```bar```
