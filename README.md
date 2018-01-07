@@ -28,3 +28,5 @@ try everything about d3
 **Area Chart**: ```面积图```
 
 **Line Chart**: ```线图```
+
+**Bivariate Area Chart**: ```Bivariate Area```
