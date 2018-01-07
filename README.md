@@ -30,3 +30,5 @@ try everything about d3
 **Line Chart**: ```线图```
 
 **Bivariate Area Chart**: ```Bivariate Area```
+
+**Multi Line**: ```Multi Line```

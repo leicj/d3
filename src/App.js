@@ -16,6 +16,7 @@ import Ease from './components/ease';
 import BasicArea from './components/basicCharts/area';
 import BasicLine from './components/basicCharts/line';
 import BasicBivariateArea from './components/basicCharts/bivariateArea';
+import BasicMultiLine from './components/basicCharts/multiLine';
 
 class App extends Component {
   state = {
@@ -54,6 +55,8 @@ class App extends Component {
       component = <BasicLine />
     } else if (type === 'basicbivariatearea') {
       component = <BasicBivariateArea />
+    } else if (type === 'basicmultiline') {
+      component = <BasicMultiLine />
     }
     return (
       <div className="App">
@@ -102,6 +105,9 @@ class App extends Component {
           </Button>
           <Button type='primary' onClick={() => this.setState({ type: 'basicbivariatearea' })}>
             Basic Bivariate Area
+          </Button>
+          <Button type='primary' onClick={() => this.setState({ type: 'basicmultiline' })}>
+            Basic Multi Line
           </Button>
         </Row>
         <Row>
