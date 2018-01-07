@@ -32,3 +32,5 @@ try everything about d3
 **Bivariate Area Chart**: ```Bivariate Area```
 
 **Multi Line**: ```Multi Line```
+
+**stack**: ```stack```
