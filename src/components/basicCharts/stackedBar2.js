@@ -1,7 +1,7 @@
 import * as React from 'react';
 import * as d3 from 'd3';
 
-class BasicStackedBar extends React.Component {
+class BasicStackedBar2 extends React.Component {
   componentDidMount() {
     const width = 660;
     const height = 300;
@@ -11,29 +11,30 @@ class BasicStackedBar extends React.Component {
     const letters = 'abcdefghijklmnopqrstuvwxyz'.split('');
     const legends = ['legend1', 'legend2', 'legend3'];
     letters.forEach((_letter, i) => {
-      const _dict = {};
-      legends.forEach((_legend, j) => {
-        _dict[_legend] = Math.floor(Math.random() * 5 + 2);
+      const first = Math.random() / 2;
+      const second = Math.random() / 2;
+      data.push({
+        legend1: first,
+        legend2: second,
+        legend3: 1 - first - second,
       });
-      data.push(_dict);
     });
-    console.log(data);
 
     const svg = d3.select('svg').attr('width', width + margin.left + margin.right)
       .attr('height', height + margin.top + margin.bottom);
     const g = svg.append('g')
       .attr('transform', `translate(${margin.left},${margin.top})`);
     const x = d3.scaleBand().domain(letters).range([0, width]).padding(0.1);
-    const y = d3.scaleLinear().domain([0, 22]).range([height, 0]);
-    const color = d3.scaleOrdinal().range(["red", "black", "green"]).domain(legends);
+    const y = d3.scaleLinear().domain([0, 1]).range([height, 0]);
+    const color = d3.scaleOrdinal().range(['red', 'black', 'green']).domain(legends);
 
     g.append('g')
-      .attr('transform', `translate(0,${height})`)
+      .attr('transform', `translate(0, ${height})`)
       .call(d3.axisBottom(x));
     g.append('g')
       .attr('transform', `translate(0,0)`)
-      .call(d3.axisLeft(y));
-
+      .call(d3.axisLeft(y).ticks(10, '%'));
+    
     const stack = d3.stack()
       .keys(legends);
 
@@ -46,12 +47,12 @@ class BasicStackedBar extends React.Component {
         if (i === 0) {
           colorIndex += 1;
         }
-        return color(legends[colorIndex])
+        return color(legends[colorIndex]);
       })
       .attr('x', (d, i) => x(letters[i % letters.length]))
       .attr('y', d => y(d[1]))
       .attr('width', x.bandwidth())
-      .attr('height', d => y(d[0]) - y(d[1]))
+      .attr('height', d => y(d[0]) - y(d[1]));
   }
   render() {
     return (
@@ -60,4 +61,4 @@ class BasicStackedBar extends React.Component {
   }
 }
 
-export default BasicStackedBar;
+export default BasicStackedBar2;

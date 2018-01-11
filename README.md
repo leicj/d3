@@ -38,3 +38,5 @@ try everything about d3
 **bar**: ```bar```
 
 **stack bar**: ```stack bar```
+
+**stack bar2**: ```stack bar2```

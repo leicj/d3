@@ -21,6 +21,7 @@ import BasicMultiLine from './components/basicCharts/multiLine';
 import BasicStack from './components/basicCharts/stack';
 import BasicBar from './components/basicCharts/bar';
 import BasicStackedBar from './components/basicCharts/stackedBar';
+import BasicStackedBar2 from './components/basicCharts/stackedBar2';
 
 class App extends Component {
   state = {
@@ -67,6 +68,8 @@ class App extends Component {
       component = <BasicBar />
     } else if (type === 'basicstackedbar') {
       component = <BasicStackedBar />
+    } else if (type === 'basicstackedbar2') {
+      component = <BasicStackedBar2 />
     }
     return (
       <div className="App">
@@ -129,6 +132,9 @@ class App extends Component {
           </Button>
           <Button type='primary' onClick={() => this.setState({ type: 'basicstackedbar' })}>
             Basic Stacked Bar
+          </Button>
+          <Button type='primary' onClick={() => this.setState({ type: 'basicstackedbar2' })}>
+            Basic Stacked Bar2
           </Button>
         </Row>
         <Row>
