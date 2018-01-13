@@ -44,6 +44,25 @@ class BasicGroupedBar extends React.Component {
       .attr('width', x1.bandwidth())
       .attr('height', d => height - y(d))
       .attr('fill', (d, i) => z(i));
+
+    const legend = g.append('g')
+      .attr('font-family', 'sanf-serif')
+      .attr('font-size', 10)
+      .attr('text-anchor', 'end')
+      .selectAll('g')
+      .data(x1Name)
+      .enter().append('g')
+      .attr('transform', (d, i) => `translate(0,${i * 20})`);
+    legend.append('rect')
+      .attr('x', width - 19)
+      .attr('width', 19)
+      .attr('height', 19)
+      .attr('fill', z);
+    legend.append('text')
+      .attr('x', width - 24)
+      .attr('y', 9.5)
+      .attr('dy', '0.32em')
+      .text(d => d);
   }
   render() {
     return (
