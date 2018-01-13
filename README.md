@@ -40,3 +40,5 @@ try everything about d3
 **stack bar**: ```stack bar```
 
 **stack bar2**: ```stack bar2```
+
+**grouped bar**: ```grouped bar```
