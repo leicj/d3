@@ -26,7 +26,7 @@ class BasicGroupedBar extends React.Component {
     const x1 = d3.scaleBand().domain(x1Name).rangeRound([0, x0.bandwidth()]).padding(0.05);
     const y = d3.scaleLinear().domain([0, 100]).range([height, 0]);
     const z = d3.scaleOrdinal()
-      .range(["#98abc5", "#8a89a6", "#7b6888", "#6b486b", "#a05d56", "#d0743c", "#ff8c00"]);
+      .range(["#98abc5", "#8a89a6", "#7b6888", "#6b486b"]);
 
     g.append('g').attr('transform', `translate(0,${height})`).call(d3.axisBottom(x0));
     g.append('g').attr('transform', `translate(0,0)`).call(d3.axisLeft(y));
