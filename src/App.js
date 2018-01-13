@@ -25,6 +25,7 @@ import BasicStackedBar2 from './components/basicCharts/stackedBar2';
 import BasicGroupedBar from './components/basicCharts/groupedBar';
 import BasicScatterplot from './components/basicCharts/scatterPlot';
 import BasicDonut from './components/basicCharts/donut';
+import BasicBarChart from './components/basicCharts/barchart';
 
 class App extends Component {
   state = {
@@ -79,6 +80,8 @@ class App extends Component {
       component = <BasicScatterplot />
     } else if (type === 'basicdonut') {
       component = <BasicDonut />
+    } else if (type === 'basicbarchart') {
+      component = <BasicBarChart />
     }
     return (
       <div className="App">
@@ -153,6 +156,9 @@ class App extends Component {
           </Button>
           <Button type='primary' onClick={() => this.setState({ type: 'basicdonut' })}>
             Basic donut 
+          </Button>
+          <Button type='primary' onClick={() => this.setState({ type: 'basicbarchart' })}>
+            Basic bar chart
           </Button>
         </Row>
         <Row>
