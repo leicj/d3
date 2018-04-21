@@ -1,5 +1,6 @@
 import * as React from 'react';
 import * as d3 from 'd3';
+import 'd3-selection-multi';
 
 class Grid extends React.Component {
   componentDidMount() {
@@ -35,16 +36,11 @@ class Grid extends React.Component {
 
     const column = row.selectAll('.square').data(d => d)
       .enter().append('rect')
-      .attr('class', 'square')
-      .attr('x', d => d.x)
-      .attr('y', d => d.y)
-      .attr('width', d => d.width)
-      .attr('height', d => d.height)
-      .style('fill', () => {
+      .attrs({ class: 'square', x: d => d.x, y: d => d.y, width: d => d.width, height: d => d.height })
+      .styles({fill: () => {
         const _random = Math.floor(Math.random() * 100);
         return ['#fff', '#2C93E8', '#F56C4E', '#838690'][ _random % 4]
-      })
-      .style('stroke', '#222');
+      }, stroke: '#222' });
 
     column.on('click', function (d) {
       d.click = d.click || 0;
