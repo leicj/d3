@@ -13,7 +13,6 @@ class KeyJump extends React.Component {
 
     const alphabet = this.state.alphabet;
     const svg = d3.select('svg');
-    const width = +svg.attr('width');
     const height = +svg.attr('height');
     const g = svg.append('g').attr('transform', `translate(32,${height / 2})`);
     const text = g.selectAll('text').data(alphabet, d => d);

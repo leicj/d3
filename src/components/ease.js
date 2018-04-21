@@ -35,7 +35,7 @@ class Ease extends React.Component {
       }
       repeat();
 
-      const easeType = svg.append('text')
+      svg.append('text')
         .attr('dy', '.35em')
         .attr('x', 475)
         .attr('text-anchor', 'middle')

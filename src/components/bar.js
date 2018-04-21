@@ -3,7 +3,7 @@ import * as d3 from 'd3';
 
 class Bar extends React.Component {
   componentDidMount() {
-    const data = d3.range(20).map(() => parseInt(Math.random() * 100), 100);
+    const data = d3.range(20).map(() => parseInt(Math.random() * 100, 10), 100);
     const height = 500;
     const width = 960;
     const barOffset = 10;
