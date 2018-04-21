@@ -25,7 +25,7 @@ class CodeInOut extends React.Component {
         .attr('x', (d, i) => i * 32)
         .attr('dy', '.35em')
         .merge(text)
-        .text(d => d)
+        .text(d => d);
       
       text.exit().remove();
     }
@@ -48,8 +48,8 @@ class CodeInOut extends React.Component {
         .attr('class', 'enter')
         .attr('dy', '.35em')
         .merge(text)
-        .text(d => d)
         .attr('x', (d, i) => i * 32)
+        .text(d => d);
 
       text.exit().remove();
     }
@@ -89,7 +89,7 @@ class CodeInOut extends React.Component {
         .text(d => d)
         .transition(t)
         .attr('y', 0)
-        .style('fill-opacity', 1)
+        .style('fill-opacity', 1);
     }
 
     update(alphabet);

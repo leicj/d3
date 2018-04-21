@@ -18,7 +18,7 @@ class Drag extends React.Component {
       }
     });
 
-    const color = d3.scaleOrdinal().range(d3.schemeCategory20);
+    const color = d3.scaleOrdinal().range(d3.schemeCategory10);
 
     svg.selectAll('circle')
       .data(circles)

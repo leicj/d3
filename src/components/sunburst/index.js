@@ -7,7 +7,7 @@ class SunBurst extends React.Component {
     const width = 500;
     const height = 500;
     const radius = Math.min(width, height) / 2;
-    const color = d3.scaleOrdinal(d3.schemeCategory20b);
+    const color = d3.scaleOrdinal(d3.schemeCategory10);
 
     const g = d3.select('svg')
       .attr('width', width)
