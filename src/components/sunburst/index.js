@@ -1,6 +1,7 @@
 import * as React from 'react';
 import * as d3 from 'd3';
 import * as nodeData from './data.json';
+import 'd3-selection-multi';
 
 class SunBurst extends React.Component {
   componentDidMount() {
@@ -10,8 +11,7 @@ class SunBurst extends React.Component {
     const color = d3.scaleOrdinal(d3.schemeCategory10);
 
     const g = d3.select('svg')
-      .attr('width', width)
-      .attr('height', height)
+      .attrs({ width, height })
       .append('g')
       .attr('transform', `translate(${width / 2},${height / 2})`);
 

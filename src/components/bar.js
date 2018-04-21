@@ -1,5 +1,6 @@
 import * as React from 'react';
 import * as d3 from 'd3';
+import 'd3-selection-multi';
 
 class Bar extends React.Component {
   componentDidMount() {
@@ -21,18 +22,14 @@ class Bar extends React.Component {
     d3.select('.chart').attr('width', width + 50).attr('height', height + 50)
       .selectAll('rect').data(data)
       .enter().append('rect')
-      .attr('x', (d, i) => x(i))
-      .attr('y', d => y(d))
-      .attr('width', barWidth)
-      .attr('height', d => height - y(d))
+      .attrs({ x: (d, i) => x(i), y: d => y(d), width: barWidth, height: d => height - y(d) })
       .style('fill', 'green');
 
     d3.select('.chart').selectAll('text').data(data)
       .enter().append('text')
-      .attr('x', (d, i) => x(i) + 10)
-      .attr('y', d => y(d))
+      .attrs({ x: (d, i) => x(i) + 10, y: d => y(d) })
       .text(d => d)
-
+      
     gx.call(xAxis);
     gy.call(yAxis);
 
